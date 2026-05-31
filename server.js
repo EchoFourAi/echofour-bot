@@ -230,8 +230,6 @@ function validateProductionConfig() {
   if (isProduction && !process.env.ALLOWED_ORIGINS) missing.push("ALLOWED_ORIGINS");
   if (isProduction && !process.env.LEADS_ENCRYPTION_KEY) missing.push("LEADS_ENCRYPTION_KEY");
   if (isProduction && !process.env.TRUST_PROXY) missing.push("TRUST_PROXY");
-  if (isProduction && !mailConfig.enabled) missing.push(...mailConfig.missing);
-
   if (missing.length) {
     throw new Error(`Missing production security configuration: ${[...new Set(missing)].join(", ")}`);
   }
