@@ -47,6 +47,12 @@ async function run() {
   assert.equal(healthJson.ok, true);
   assert.equal(healthJson.encryptedLeadStorage, true);
 
+  const securityTxt = await request("/.well-known/security.txt");
+  assert.equal(securityTxt.status, 200, "security.txt should load");
+  const securityTxtBody = await securityTxt.text();
+  assert.ok(securityTxtBody.includes("Contact: mailto:hello@echofourai.com"));
+  assert.ok(securityTxtBody.includes("Canonical: https://echofourai.com/.well-known/security.txt"));
+
   const hostile = await request("/chat", {
     method: "POST",
     headers: {

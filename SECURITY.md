@@ -30,6 +30,7 @@ This project is a public website and lead-capture demo. The security goal is to 
 - Production startup fails fast if required security settings are missing.
 - Lead notification email is available through SMTP environment variables only.
 - `/healthz` reports non-sensitive operational status for deployment checks.
+- `/.well-known/security.txt` provides a standard contact path for responsible security reports.
 - `npm audit --audit-level=moderate` reports 0 vulnerabilities.
 
 ## Production Requirements

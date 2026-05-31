@@ -99,6 +99,18 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/.well-known/security.txt", (req, res) => {
+  res.type("text/plain");
+  res.setHeader("Cache-Control", "no-store");
+  res.send([
+    "Contact: mailto:hello@echofourai.com",
+    "Preferred-Languages: en, fr",
+    "Canonical: https://echofourai.com/.well-known/security.txt",
+    "Policy: https://echofourai.com/privacy.html",
+    ""
+  ].join("\n"));
+});
+
 app.use(express.static(path.join(__dirname), {
   dotfiles: "deny",
   etag: true,
