@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EchoFour AI builds custom AI assistants, internal tools, dashboards, and workflow automations for businesses.">
+  <title>EchoFour AI | AI Automation Agency</title>
+  <link rel="icon" href="assets/echofour-mark-premium.svg" type="image/svg+xml">
+
+  <link rel="stylesheet" href="assets/site.css?v=20260507-security">
+</head>
+
+<body>
+  <nav>
+    <a href="#top" aria-label="EchoFour AI home">
+      <img class="logo" src="assets/echofour-logo-premium.svg" alt="EchoFour AI">
+    </a>
+    <div class="nav-links" aria-label="Primary navigation">
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#industries" data-i18n="nav.industries">Industries</a>
+      <a href="#process" data-i18n="nav.process">Process</a>
+      <a href="#demo" data-i18n="nav.demo">Live Demo</a>
+      <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+    </div>
+    <div class="nav-actions">
+      <div class="lang-toggle" aria-label="Language">
+        <button class="lang-btn active" type="button" data-lang-btn="en">EN</button>
+        <button class="lang-btn" type="button" data-lang-btn="fr">FR</button>
+      </div>
+        <a class="nav-cta" href="mailto:hello@echofourai.com?subject=EchoFour%20AI%20consultation" data-i18n="nav.cta" aria-label="Book a Call">Book a Call</a>
+    </div>
+  </nav>
+
+  <main id="top" class="page">
+    <section class="hero" id="demo">
+      <div>
+        <div class="eyebrow" data-i18n="hero.eyebrow">AI automation agency</div>
+        <h1><span data-i18n="hero.title.main">Turn messy business workflows into intelligent</span> <span class="accent" data-i18n="hero.title.accent">AI systems.</span></h1>
+        <p class="hero-copy" data-i18n="hero.copy">
+          EchoFour AI builds custom AI assistants, internal tools, dashboards, and workflow automations for businesses that want cleaner operations and faster decisions.
+        </p>
+
+        <div class="actions">
+          <a class="primary-btn" href="mailto:hello@echofourai.com?subject=EchoFour%20AI%20consultation" data-i18n="hero.primary">Start Your Automation</a>
+          <a class="secondary-btn" href="#services" data-i18n="hero.secondary">Explore Services</a>
+        </div>
+
+        <div class="trust-row" aria-label="EchoFour AI highlights">
+          <div class="trust-item">
+            <div class="trust-value">24/7</div>
+            <div class="trust-label" data-i18n="trust.one">AI intake for customers and internal teams</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-value">5 min</div>
+            <div class="trust-label" data-i18n="trust.two">Workflow summaries delivered instantly</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-value">100%</div>
+            <div class="trust-label" data-i18n="trust.three">Built around your exact business process</div>
+          </div>
+        </div>
+
+        <div class="deliverables" aria-label="EchoFour AI deliverables">
+          <span data-i18n="deliverables.one">AI chat assistants</span>
+          <span data-i18n="deliverables.two">Internal dashboards</span>
+          <span data-i18n="deliverables.three">Spreadsheet automation</span>
+          <span data-i18n="deliverables.four">CRM workflows</span>
+        </div>
+      </div>
+
+      <div class="demo-shell" aria-label="Interactive EchoFour AI demo">
+        <div class="demo-top">
+          <span data-i18n="demo.console">Customer Intake Console</span>
+          <div class="demo-actions">
+            <button class="reset-btn" type="button" data-action="reset-demo" data-i18n="demo.reset">Reset</button>
+            <span class="status"><span class="status-dot"></span> <span data-i18n="demo.live">Live</span></span>
+          </div>
+        </div>
+
+        <div class="demo-grid">
+          <div>
+            <div id="messages" class="chatbox"></div>
+            <div class="input-row">
+              <div class="input-box">
+                <textarea id="input" maxlength="1200" placeholder="Try: I need a commission grid tool for our advisors"></textarea>
+              </div>
+              <button class="send-btn" type="button" data-action="send-message" data-i18n="demo.send">Send</button>
+            </div>
+            <p class="privacy-note" data-i18n="demo.privacy">Do not share passwords, payment details, private keys, or regulated personal data in this demo.</p>
+            <div class="prompt-row" aria-label="Demo prompts">
+              <button type="button" data-prompt-key="prompts.commissionText" data-i18n="prompts.commission">Commission tool</button>
+              <button type="button" data-prompt-key="prompts.leadText" data-i18n="prompts.lead">Lead intake</button>
+              <button type="button" data-prompt-key="prompts.serviceText" data-i18n="prompts.service">Service demo</button>
+            </div>
+          </div>
+
+          <div class="dashboard">
+            <div class="panel-title">
+              <h3 data-i18n="dashboard.title">Live Insights</h3>
+              <span id="confidenceBadge" class="score">Analyzing</span>
+            </div>
+
+            <div class="metric">
+              <span id="issueLabel" class="metric-label">Opportunity</span>
+              <span id="issueValue" class="metric-value">Waiting for inquiry</span>
+            </div>
+            <div class="metric">
+              <span id="urgencyLabel" class="metric-label">Priority</span>
+              <span id="urgencyValue" class="metric-value">Pending</span>
+            </div>
+            <div class="metric">
+              <span id="estimateLabel" class="metric-label">Scope</span>
+              <span id="estimateValue" class="metric-value">Pending</span>
+            </div>
+            <div class="metric">
+              <span id="cityLabel" class="metric-label">Market</span>
+              <span id="cityValue" class="metric-value">Unknown</span>
+            </div>
+            <div class="metric">
+              <span id="integrationLabel" class="metric-label">Integration</span>
+              <span id="integrationValue" class="metric-value">Pending</span>
+            </div>
+            <div class="metric">
+              <span id="nextStepLabel" class="metric-label">Next Step</span>
+              <span id="nextStepValue" class="metric-value">Qualify inquiry</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label" data-i18n="dashboard.contact">Contact</span>
+              <span id="contactValue" class="metric-value">Not captured</span>
+            </div>
+            <div id="readyState" class="ready" hidden data-i18n="dashboard.ready">Ready for follow-up</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="industries">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="eyebrow" data-i18n="industries.eyebrow">Built for busy teams</div>
+          <h2 data-i18n="industries.title">Start with the teams that lose time when work is manual.</h2>
+          <p data-i18n="industries.copy">
+            EchoFour AI is strongest when information lives in conversations, spreadsheets, emails, or disconnected systems and your team needs a cleaner way to act on it.
+          </p>
+        </div>
+
+        <div class="industry-grid">
+          <div class="industry-item" data-i18n="industry.plumbing">Plumbing</div>
+          <div class="industry-item">HVAC</div>
+          <div class="industry-item" data-i18n="industry.auto">Auto Shops</div>
+          <div class="industry-item" data-i18n="industry.recruiting">Recruiting</div>
+          <div class="industry-item" data-i18n="industry.agencies">Agencies</div>
+          <div class="industry-item" data-i18n="industry.finance">Financial Services</div>
+          <div class="industry-item" data-i18n="industry.cleaning">Cleaning</div>
+          <div class="industry-item" data-i18n="industry.realestate">Real Estate</div>
+          <div class="industry-item" data-i18n="industry.advisors">Advisor Networks</div>
+          <div class="industry-item" data-i18n="industry.operations">Operations Teams</div>
+          <div class="industry-item" data-i18n="industry.sales">Sales Teams</div>
+          <div class="industry-item" data-i18n="industry.admin">Admin Teams</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="section-inner process-layout">
+        <div class="section-heading">
+          <div class="eyebrow" data-i18n="process.eyebrow">How projects work</div>
+          <h2 data-i18n="process.title">A focused launch process that gets your first automation live fast.</h2>
+          <p data-i18n="process.copy">
+            We map one important workflow, build the AI system around it, connect the handoff, then improve it with real business data.
+          </p>
+        </div>
+
+        <div class="process-list">
+          <article class="process-step">
+            <span>01</span>
+            <div>
+              <h3 data-i18n="process.one.title">Map the intake</h3>
+              <p data-i18n="process.one.copy">We identify the questions your team asks repeatedly and the details needed before a lead becomes useful.</p>
+            </div>
+          </article>
+
+          <article class="process-step">
+            <span>02</span>
+            <div>
+              <h3 data-i18n="process.two.title">Build the assistant</h3>
+              <p data-i18n="process.two.copy">The chat flow is designed around your industry, tone, services, locations, and qualification rules.</p>
+            </div>
+          </article>
+
+          <article class="process-step">
+            <span>03</span>
+            <div>
+              <h3 data-i18n="process.three.title">Connect the handoff</h3>
+              <p data-i18n="process.three.copy">Qualified leads can be sent to your inbox, CRM, booking system, or internal team notification channel.</p>
+            </div>
+          </article>
+
+          <article class="process-step">
+            <span>04</span>
+            <div>
+              <h3 data-i18n="process.four.title">Optimize from real data</h3>
+              <p data-i18n="process.four.copy">We review actual conversations and improve the questions, scoring, dashboard, and automation rules.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="eyebrow" data-i18n="services.eyebrow">What EchoFour builds</div>
+          <h2 data-i18n="services.title">AI systems that remove repetitive work from your team.</h2>
+          <p data-i18n="services.copy">
+            We design, launch, and improve automation workflows that fit the way your business already sells, responds, schedules, and follows up.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-kicker">01</div>
+            <h3 data-i18n="services.one.title">AI Assistants</h3>
+            <p data-i18n="services.one.copy">Website or internal assistants that answer questions, collect details, qualify requests, and move work toward action.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-kicker">02</div>
+            <h3 data-i18n="services.two.title">Dashboards and Internal Tools</h3>
+            <p data-i18n="services.two.copy">Custom tools for tracking commissions, leads, tasks, performance, customer requests, and operational decisions.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-kicker">03</div>
+            <h3 data-i18n="services.three.title">Workflow Automation</h3>
+            <p data-i18n="services.three.copy">Automations that connect intake with email, CRM, scheduling, notifications, and internal handoffs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="eyebrow" data-i18n="pricing.eyebrow">Project starting points</div>
+          <h2 data-i18n="pricing.title">Start focused. Prove value. Expand into your AI operating system.</h2>
+          <p data-i18n="pricing.copy">
+            Each project is scoped around the workflow, data, integrations, and business outcome you want to automate.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <h3 data-i18n="pricing.starter.title">Starter</h3>
+            <p data-i18n="pricing.starter.copy">For one focused workflow, prototype, or customer-facing intake experience.</p>
+            <div class="price-stack">
+              <div class="price-row">
+                <span class="price-label" data-i18n="pricing.setupLabel">Setup</span>
+                <strong>$300+</strong>
+              </div>
+              <div class="price-row monthly">
+                <span class="price-label" data-i18n="pricing.monthlyLabel">Monthly</span>
+                <strong>$99+</strong>
+              </div>
+            </div>
+            <ul>
+              <li data-i18n="pricing.starter.one">Website chat assistant</li>
+              <li data-i18n="pricing.starter.two">Simple workflow logic</li>
+              <li data-i18n="pricing.starter.three">Email or dashboard handoff</li>
+            </ul>
+          </article>
+
+          <article class="pricing-card featured">
+            <h3 data-i18n="pricing.growth.title">Growth</h3>
+            <p data-i18n="pricing.growth.copy">For businesses ready to qualify, calculate, prioritize, route, or report automatically.</p>
+            <div class="price-stack">
+              <div class="price-row">
+                <span class="price-label" data-i18n="pricing.setupLabel">Setup</span>
+                <strong>$750+</strong>
+              </div>
+              <div class="price-row monthly">
+                <span class="price-label" data-i18n="pricing.monthlyLabel">Monthly</span>
+                <strong>$249+</strong>
+              </div>
+            </div>
+            <ul>
+              <li data-i18n="pricing.growth.one">Custom intake flow</li>
+              <li data-i18n="pricing.growth.two">Live insights dashboard</li>
+              <li data-i18n="pricing.growth.three">CRM, email, or spreadsheet handoff</li>
+            </ul>
+          </article>
+
+          <article class="pricing-card">
+            <h3 data-i18n="pricing.pro.title">Pro</h3>
+            <p data-i18n="pricing.pro.copy">For teams that want deeper automation across customer-facing and internal workflows.</p>
+            <div class="price-stack">
+              <div class="price-row">
+                <span class="price-label" data-i18n="pricing.setupLabel">Setup</span>
+                <strong>$1,500+</strong>
+              </div>
+              <div class="price-row monthly">
+                <span class="price-label" data-i18n="pricing.monthlyLabel">Monthly</span>
+                <strong>$1.5k-$5k</strong>
+              </div>
+            </div>
+            <ul>
+              <li data-i18n="pricing.pro.one">Multi-step workflows</li>
+              <li data-i18n="pricing.pro.two">Industry-specific logic</li>
+              <li data-i18n="pricing.pro.three">Monthly optimization</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="final-cta">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="eyebrow" data-i18n="contact.eyebrow">Build the first automation</div>
+          <h2 data-i18n="contact.title">Give your business an AI system that handles the repetitive work.</h2>
+          <p data-i18n="contact.copy">
+            EchoFour AI can start with one high-value workflow, prove the result, then expand into the rest of your operation.
+          </p>
+        </div>
+        <form id="contactForm" class="contact-form">
+          <input name="name" type="text" placeholder="Name" aria-label="Name" autocomplete="name" maxlength="160" required>
+          <input name="email" type="email" placeholder="Email" aria-label="Email" autocomplete="email" maxlength="160" required>
+          <input name="business" type="text" placeholder="Business type" aria-label="Business type" maxlength="220" required>
+          <input class="workflow-field" name="workflow" type="text" placeholder="Workflow to automate" aria-label="Workflow to automate" maxlength="320">
+          <label class="privacy-consent">
+            <input name="privacyConsent" type="checkbox" required>
+            <span data-i18n="form.privacyConsent">I agree to be contacted about this request and understand EchoFour AI will process this information under the privacy policy.</span>
+          </label>
+          <input id="formStartedAt" name="startedAt" type="hidden">
+          <label class="form-trap" for="website">Website</label>
+          <input id="website" class="form-trap" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="primary-btn" type="submit" data-i18n="contact.submit">Book a Consultation</button>
+        </form>
+        <p id="formStatus" class="form-status" role="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div data-i18n="footer.copyright">Copyright © 2026 EchoFour AI. All rights reserved.</div>
+        <p class="footer-note" data-i18n="footer.note">EchoFour AI, its logo, website copy, interface design, demo flows, and automation materials are owned by EchoFour AI unless otherwise stated.</p>
+      </div>
+      <div class="footer-links" aria-label="Legal links">
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="terms.html" data-i18n="footer.terms">Terms</a>
+        <a href="copyright.html" data-i18n="footer.contact">Copyright</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/site.js?v=20260507-security" defer></script>
+</body>
+</html>

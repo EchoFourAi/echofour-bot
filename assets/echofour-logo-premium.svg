@@ -1,0 +1,71 @@
+<svg width="760" height="220" viewBox="0 0 760 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">EchoFour AI premium logo</title>
+  <desc id="desc">An original futuristic premium EchoFour AI logo with four gold echo blades forming a dynamic E4-inspired mark.</desc>
+
+  <defs>
+    <linearGradient id="goldMain" x1="54" y1="42" x2="174" y2="166" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF4B5"/>
+      <stop offset="0.24" stop-color="#F5D76E"/>
+      <stop offset="0.58" stop-color="#D4AF37"/>
+      <stop offset="1" stop-color="#8F5E0A"/>
+    </linearGradient>
+
+    <linearGradient id="goldWord" x1="210" y1="82" x2="662" y2="146" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF2AA"/>
+      <stop offset="0.36" stop-color="#D4AF37"/>
+      <stop offset="0.74" stop-color="#F7DC75"/>
+      <stop offset="1" stop-color="#A87212"/>
+    </linearGradient>
+
+    <linearGradient id="cyanEdge" x1="52" y1="44" x2="172" y2="170" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="0.45" stop-color="#635BFF"/>
+      <stop offset="1" stop-color="#A855F7"/>
+    </linearGradient>
+
+    <filter id="goldGlow" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.91 0 0 0 0 0.68 0 0 0 0 0.18 0 0 0 0.45 0"/>
+      <feBlend in="SourceGraphic" mode="screen"/>
+    </filter>
+
+    <filter id="coolGlow" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.08 0 0 0 0 0.63 0 0 0 0 1 0 0 0 0.28 0"/>
+      <feBlend in="SourceGraphic" mode="screen"/>
+    </filter>
+  </defs>
+
+  <rect width="760" height="220" fill="transparent"/>
+
+  <g filter="url(#coolGlow)" opacity="0.9">
+    <path d="M112 22L184 63.5V146.5L112 188L40 146.5V63.5L112 22Z" stroke="url(#cyanEdge)" stroke-width="2.5" opacity="0.55"/>
+    <path d="M112 42L166.679 73.5V136.5L112 168L57.3205 136.5V73.5L112 42Z" stroke="url(#cyanEdge)" stroke-width="1.5" opacity="0.35"/>
+  </g>
+
+  <g filter="url(#goldGlow)">
+    <path d="M104 50C70 58 48 82 42 108C68 94 92 86 123 86L104 50Z" fill="url(#goldMain)"/>
+    <path d="M126 53C160 62 181 87 185 114C160 98 137 90 106 89L126 53Z" fill="url(#goldMain)"/>
+    <path d="M101 164C67 155 47 130 44 103C68 120 91 128 122 129L101 164Z" fill="url(#goldMain)"/>
+    <path d="M128 160C162 151 182 126 185 99C161 116 138 124 107 125L128 160Z" fill="url(#goldMain)"/>
+
+    <path d="M81 86H131" stroke="#08111F" stroke-width="13" stroke-linecap="round"/>
+    <path d="M76 111H118" stroke="#08111F" stroke-width="13" stroke-linecap="round"/>
+    <path d="M82 136H132" stroke="#08111F" stroke-width="13" stroke-linecap="round"/>
+
+    <path d="M146 67V148" stroke="#FFF1A8" stroke-width="8" stroke-linecap="round"/>
+    <path d="M146 67L109 121H162" stroke="#FFF1A8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M146 67V148" stroke="#8F5E0A" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+    <path d="M146 67L109 121H162" stroke="#8F5E0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.75"/>
+
+    <path d="M112 24L184 65.5V148.5L112 190L40 148.5V65.5L112 24Z" stroke="url(#goldMain)" stroke-width="3" opacity="0.88"/>
+  </g>
+
+  <g>
+    <text x="222" y="122" fill="url(#goldWord)" font-family="Inter, Arial, sans-serif" font-size="66" font-weight="800" letter-spacing="0">EchoFour</text>
+    <text x="585" y="122" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="66" font-weight="800" letter-spacing="0">AI</text>
+    <path d="M226 144H650" stroke="url(#goldWord)" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M226 154H330" stroke="#22D3EE" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+    <text x="226" y="174" fill="#8EA2B8" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" letter-spacing="3">AUTOMATION INTELLIGENCE</text>
+  </g>
+</svg>

@@ -1,0 +1,55 @@
+<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">EchoFour AI premium mark</title>
+  <desc id="desc">An original futuristic gold EchoFour AI mark with four echo blades around an E4 negative-space center.</desc>
+
+  <defs>
+    <linearGradient id="goldMain" x1="52" y1="28" x2="184" y2="190" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF4B5"/>
+      <stop offset="0.24" stop-color="#F5D76E"/>
+      <stop offset="0.58" stop-color="#D4AF37"/>
+      <stop offset="1" stop-color="#8F5E0A"/>
+    </linearGradient>
+
+    <linearGradient id="cyanEdge" x1="38" y1="30" x2="190" y2="188" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="0.45" stop-color="#635BFF"/>
+      <stop offset="1" stop-color="#A855F7"/>
+    </linearGradient>
+
+    <filter id="goldGlow" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.91 0 0 0 0 0.68 0 0 0 0 0.18 0 0 0 0.48 0"/>
+      <feBlend in="SourceGraphic" mode="screen"/>
+    </filter>
+
+    <filter id="coolGlow" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.08 0 0 0 0 0.63 0 0 0 0 1 0 0 0 0.32 0"/>
+      <feBlend in="SourceGraphic" mode="screen"/>
+    </filter>
+  </defs>
+
+  <rect width="220" height="220" fill="transparent"/>
+
+  <g filter="url(#coolGlow)" opacity="0.9">
+    <path d="M110 22L184.478 65V151L110 194L35.5218 151V65L110 22Z" stroke="url(#cyanEdge)" stroke-width="2.5" opacity="0.55"/>
+    <path d="M110 44L165.426 76V140L110 172L54.5744 140V76L110 44Z" stroke="url(#cyanEdge)" stroke-width="1.5" opacity="0.35"/>
+  </g>
+
+  <g filter="url(#goldGlow)">
+    <path d="M102 49C67 57 45 82 39 109C65 94 90 86 122 86L102 49Z" fill="url(#goldMain)"/>
+    <path d="M127 52C162 61 184 87 188 115C162 98 138 90 106 89L127 52Z" fill="url(#goldMain)"/>
+    <path d="M100 168C65 159 44 133 41 105C66 122 90 130 122 131L100 168Z" fill="url(#goldMain)"/>
+    <path d="M129 164C164 155 185 129 188 101C163 118 139 126 107 127L129 164Z" fill="url(#goldMain)"/>
+
+    <path d="M80 87H132" stroke="#08111F" stroke-width="13" stroke-linecap="round"/>
+    <path d="M75 112H119" stroke="#08111F" stroke-width="13" stroke-linecap="round"/>
+    <path d="M81 138H133" stroke="#08111F" stroke-width="13" stroke-linecap="round"/>
+    <path d="M148 67V151" stroke="#FFF1A8" stroke-width="8" stroke-linecap="round"/>
+    <path d="M148 67L109 123H164" stroke="#FFF1A8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M148 67V151" stroke="#8F5E0A" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+    <path d="M148 67L109 123H164" stroke="#8F5E0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.75"/>
+
+    <path d="M110 24L184.478 67V153L110 196L35.5218 153V67L110 24Z" stroke="url(#goldMain)" stroke-width="3" opacity="0.88"/>
+  </g>
+</svg>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Example EchoFour AI plumbing intake and dispatch automation.">
+  <title>Plumbing Intake Example | EchoFour AI</title>
+  <link rel="icon" href="assets/echofour-mark-premium.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/plumbing-example.css?v=20260507-security">
+</head>
+<body>
+  <nav class="topbar">
+    <a href="index.html" aria-label="EchoFour AI home">
+      <img class="logo" src="assets/echofour-logo-premium.svg" alt="EchoFour AI">
+    </a>
+    <a class="back-link" href="simulation-results.html#case-1">Back to simulation</a>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Client example</div>
+        <h1>Emergency Leak Intake + Dispatch Dashboard</h1>
+        <p>
+          A working example of what EchoFour AI could build for a plumbing company that wants to qualify emergency leak calls, collect location, estimate urgency, and send jobs to dispatch.
+        </p>
+      </div>
+      <div class="hero-status">
+        <span>Example client</span>
+        <strong>Northline Plumbing</strong>
+        <small>Montreal service area</small>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <div class="assistant-panel">
+        <div class="panel-heading">
+          <span>Website AI Intake</span>
+          <strong id="intakeStatus">Collecting details</strong>
+        </div>
+        <div id="chatStream" class="chat-stream" aria-live="polite"></div>
+        <div class="prompt-actions">
+          <button type="button" data-demo-step="emergency">Simulate emergency leak</button>
+          <button type="button" data-demo-step="commercial">Commercial request</button>
+          <button type="button" data-demo-step="reset">Reset</button>
+        </div>
+      </div>
+
+      <div class="dashboard-panel">
+        <div class="panel-heading">
+          <span>Live Dispatch View</span>
+          <strong id="dispatchStatus">Waiting</strong>
+        </div>
+
+        <div class="score-card">
+          <div>
+            <span>Priority score</span>
+            <strong id="priorityScore">0%</strong>
+          </div>
+          <div class="score-bar">
+            <span id="scoreFill"></span>
+          </div>
+        </div>
+
+        <div class="job-grid">
+          <div class="job-field">
+            <span>Issue</span>
+            <strong id="jobIssue">Not captured</strong>
+          </div>
+          <div class="job-field">
+            <span>Location</span>
+            <strong id="jobLocation">Not captured</strong>
+          </div>
+          <div class="job-field">
+            <span>Property</span>
+            <strong id="jobProperty">Not captured</strong>
+          </div>
+          <div class="job-field">
+            <span>Contact</span>
+            <strong id="jobContact">Not captured</strong>
+          </div>
+          <div class="job-field">
+            <span>Suggested ETA</span>
+            <strong id="jobEta">Pending</strong>
+          </div>
+          <div class="job-field">
+            <span>Handoff</span>
+            <strong id="jobHandoff">Pending</strong>
+          </div>
+        </div>
+      </div>
+
+      <aside class="handoff-panel">
+        <div class="panel-heading">
+          <span>Dispatch Summary</span>
+          <strong>Ready output</strong>
+        </div>
+        <div id="summaryBox" class="summary-box">
+          No request has been qualified yet.
+        </div>
+        <div class="handoff-actions">
+          <button type="button" data-copy-summary>Copy summary</button>
+          <a href="mailto:hello@echofourai.com?subject=Plumbing%20intake%20example">Discuss build</a>
+        </div>
+      </aside>
+    </section>
+
+    <section class="build-plan">
+      <div>
+        <div class="eyebrow">What we would build</div>
+        <h2>From missed calls to structured dispatch tickets.</h2>
+      </div>
+      <div class="plan-grid">
+        <article>
+          <span>01</span>
+          <h3>Intake rules</h3>
+          <p>Questions for leak source, water shutoff status, property type, location, access notes, and callback number.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Urgency scoring</h3>
+          <p>Priority logic that separates active flooding from quote requests and regular appointments.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Dispatch handoff</h3>
+          <p>Email, dashboard, CRM, or SMS-ready summaries for the dispatcher or technician on call.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/plumbing-example.js?v=20260507-security" defer></script>
+</body>
+</html>

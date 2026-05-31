@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+.private/
+backups/
+New Text Document.txt
+servertxt.txt
+*.key
+*.log
+node_modules/

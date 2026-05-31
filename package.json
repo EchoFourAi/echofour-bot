@@ -1,0 +1,22 @@
+{
+  "name": "echofour-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "test": "node tests/chat-followup.test.js && node tests/conversation-matrix.test.js && node tests/french-language.test.js && node tests/industry-chat.test.js && node tests/launch-phrases.test.js && node tests/security.test.js",
+    "test:chat": "node tests/chat-followup.test.js && node tests/conversation-matrix.test.js && node tests/french-language.test.js && node tests/industry-chat.test.js && node tests/launch-phrases.test.js",
+    "test:security": "node tests/security.test.js",
+    "audit": "npm audit --audit-level=moderate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "nodemailer": "^8.0.7"
+  }
+}
