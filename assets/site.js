@@ -119,6 +119,7 @@ const translations = {
     "contact.title": "Give your business an AI system that handles the repetitive work.",
     "contact.copy": "EchoFour AI can start with one high-value workflow, prove the result, then expand into the rest of your operation.",
     "contact.submit": "Book a Consultation",
+    "contact.emailLabel": "Prefer email?",
     "form.name": "Name",
     "form.email": "Email",
     "form.business": "Business type",
@@ -253,6 +254,7 @@ const translations = {
     "contact.title": "Donnez à votre entreprise un système IA qui gère le travail répétitif.",
     "contact.copy": "EchoFour AI peut commencer avec un workflow à forte valeur, prouver le résultat, puis s'étendre dans le reste de vos opérations.",
     "contact.submit": "Réserver une consultation",
+    "contact.emailLabel": "Vous préférez le courriel?",
     "form.name": "Nom",
     "form.email": "Courriel",
     "form.business": "Type d'entreprise",
@@ -432,7 +434,8 @@ document.getElementById("contactForm").addEventListener("submit", async function
   status.textContent = t("form.sending");
 
   try {
-    const res = await fetch("/lead", {
+    const leadEndpoint = window.location.hostname.endsWith("echofourai.com") ? "/lead.php" : "/lead";
+    const res = await fetch(leadEndpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)

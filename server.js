@@ -1215,12 +1215,28 @@ function buildAutomationContinuation(data, message = "", language = "en") {
     return `Yes. For ${data.issue}, reminders and confirmations can be part of the workflow. The build plan would define who receives each message, when it should be sent, what the message should say, and how exceptions get handed to your team.`;
   }
 
+  if (m.includes("calendar") || m.includes("crm") || m.includes("email") || m.includes("integrat")) {
+    return `For tools, I have ${data.integration} noted. The build plan would confirm the exact account, CRM or system connection, what data should pass through, and what your team should receive after each completed conversation.`;
+  }
+
+  if (m.includes("need from us") || m.includes("need from me") || m.includes("what do you need") || m.includes("provide") || m.includes("requirements")) {
+    return `To prepare ${data.issue}, EchoFour would need the current workflow, sample questions or requests, the handoff rules, access details for ${data.integration}, and a clear owner for launch feedback. The details you already gave would become the starting brief.`;
+  }
+
+  if (m.includes("privacy") || m.includes("secure") || m.includes("security") || m.includes("data") || m.includes("patient") || m.includes("confidential")) {
+    return `Security would be part of the build plan. For ${data.issue}, EchoFour would confirm what data is collected, where it is stored, who can access it, retention expectations, and any privacy requirements before connecting ${data.integration}.`;
+  }
+
+  if (m.includes("after launch") || m.includes("go live") || m.includes("go-live") || m.includes("maintain") || m.includes("support")) {
+    return `After launch, EchoFour would monitor the first conversations, tune the workflow, review handoffs with your team, and decide which improvements should come next. The first version stays focused on ${data.workflowDetail}.`;
+  }
+
   if (m.includes("how long") || m.includes("timeline") || m.includes("when") || m.includes("launch")) {
     return `A first version would usually be scoped around one focused workflow first: ${data.workflowDetail}. The build plan would separate the quick-launch version from later improvements like extra channels, reporting, or CRM automation.`;
   }
 
-  if (m.includes("calendar") || m.includes("crm") || m.includes("email") || m.includes("integrat")) {
-    return `For tools, I have ${data.integration} noted. The build plan would confirm the exact account, CRM or system connection, what data should pass through, and what your team should receive after each completed conversation.`;
+  if (m.includes("fail") || m.includes("fails") || m.includes("wrong") || m.includes("exception") || m.includes("miss") || m.includes("backup")) {
+    return `The build plan would include fallback rules. If ${data.issue} cannot complete a step, it can collect the safest details, flag the exception, and use the handoff path to your team: ${data.handoff}.`;
   }
 
   return `Yes. At this point the project is scoped as ${data.issue}. The next useful step is a build plan that turns the workflow, handoff, and tools into implementation steps and an estimate.`;

@@ -753,6 +753,22 @@ ul {
   text-align: center;
 }
 
+.contact-direct {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.contact-direct a {
+  color: var(--gold-soft);
+}
+
+.contact-direct a:hover {
+  color: #ffffff;
+}
+
 .form-trap {
   position: absolute;
   left: -10000px;

@@ -1,6 +1,6 @@
 # EchoFour AI Progress
 
-Last saved: 2026-05-26
+Last saved: 2026-06-07
 
 ## Current State
 
@@ -29,9 +29,12 @@ Last saved: 2026-05-26
 - Chat flow is being upgraded from a scripted lead form into a fuller multi-turn discovery flow.
 - Automation chat now collects workflow detail, handoff/action, existing tools, then contact before finalizing.
 - Final automation summary now repeats the captured workflow, handoff, and tools instead of using a generic close.
-- Post-completion chat can now answer follow-up questions about estimates, timelines, tools/integrations, reminders, confirmations, texts, and notifications.
+- Post-completion chat can now answer follow-up questions about estimates, timelines, tools/integrations, reminders, confirmations, texts, notifications, client requirements, privacy/security, fallback handling, and post-launch support.
 - A new full conversation matrix test was added and wired into `npm test`.
-- Current active work: continue expanding post-completion response coverage in batches instead of fixing one screenshot at a time.
+- Project email is `hello@echofourai.com`.
+- `.env.example` is configured for Zoho SMTP with `hello@echofourai.com` as the sender/user placeholder; real SMTP credentials must stay in `.env` or deployment secrets.
+- IONOS production lead email path is prepared with `lead.php`, `lead-config.example.php`, and a production contact-form endpoint switch to `/lead.php`.
+- Current active work: prepare deployment/integration setup while continuing to add targeted chat QA as new buyer questions come up.
 
 ## Key Files
 
@@ -58,10 +61,14 @@ Last saved: 2026-05-26
 
 ## Verified Before Saving
 
-- `npm.cmd test` passed before the newest conversation-matrix expansion.
+- `node --check server.js` passes.
+- `npm.cmd test` passes with expanded post-completion conversation coverage.
 - After adding `tests/conversation-matrix.test.js`, first matrix run caught a real gap: post-completion reminder questions were generic.
 - Added a reminder/confirmation/text/notification continuation response in `server.js`.
-- Next verification needed: restart the localhost server, rerun `npm.cmd test`, fix any remaining matrix failures in batches, then run a live browser end-to-end chat flow.
+- Added continuation responses for client requirements, privacy/security, fallback handling, and after-launch support.
+- Restarted the localhost server and verified the live chat route is using the latest continuation logic.
+- Node syntax and full `npm.cmd test` pass after adding the IONOS/PHP lead endpoint.
+- PHP is not installed in the local Windows shell, so `php -l lead.php` could not be run locally; lint/test this on IONOS or any PHP-enabled shell after upload.
 - Industry simulation examples open from the simulation report.
 - Plumbing and HVAC demos were verified in the in-app browser with no console errors.
 - Urgent and non-urgent closing messages were verified in the browser.
@@ -77,6 +84,8 @@ Last saved: 2026-05-26
 - Revisit Starter and Growth pricing once the service packages are clearer.
 - Continue security hardening with deployment secrets, HTTPS/proxy settings, persistent database, and admin access controls.
 - Prepare deployment plan for a soft launch.
-- Finish broad chat QA before launch: run full conversation matrix across clinic, recruiting, dashboard/reporting, website assistant, quote, email triage, booking, and CRM workflows.
-- Add more post-completion answers for likely lead questions: pricing range, implementation timeline, what EchoFour needs from the client, integrations, privacy/security, booking ownership, handoff failures, and what happens after launch.
+- Create the real `.env` or deployment secrets with Zoho SMTP credentials for `hello@echofourai.com`.
+- For IONOS static/PHP hosting, create `lead-config.php` from `lead-config.example.php` with the real Zoho app password, upload `lead.php`, `lead-config.php`, and the updated `assets/site.js`, then submit a live test lead.
+- Finish broad chat QA before launch by adding new matrix scenarios as real sales/demo questions appear.
+- Add more post-completion answers for likely lead questions: booking ownership, payment/deposit flows, analytics/reporting, and escalation ownership.
 - Keep testing after each batch: `node --check server.js`, `npm.cmd test`, then a live browser conversation on `http://localhost:3000/`.

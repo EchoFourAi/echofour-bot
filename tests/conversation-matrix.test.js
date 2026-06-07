@@ -88,6 +88,12 @@ async function run() {
           currentQuestion: "done",
           replyIncludes: ["first version", "quick-launch"],
           replyExcludes: ["Perfect. I captured this"]
+        },
+        {
+          message: "What would you need from us to get started?",
+          currentQuestion: "done",
+          replyIncludes: ["current workflow", "handoff rules", "launch feedback"],
+          replyExcludes: ["Perfect. I captured this"]
         }
       ]
     },
@@ -115,6 +121,12 @@ async function run() {
           message: "Can it send reminders too?",
           currentQuestion: "done",
           replyIncludes: ["reminder"],
+          replyExcludes: ["Perfect. I captured this"]
+        },
+        {
+          message: "What happens if it fails or misses something?",
+          currentQuestion: "done",
+          replyIncludes: ["fallback rules", "flag the exception", "handoff"],
           replyExcludes: ["Perfect. I captured this"]
         }
       ]
@@ -144,6 +156,12 @@ async function run() {
           currentQuestion: "done",
           replyIncludes: ["tools", "CRM"],
           replyExcludes: ["Perfect. I captured this"]
+        },
+        {
+          message: "Who supports it after launch?",
+          currentQuestion: "done",
+          replyIncludes: ["After launch", "monitor", "improvements"],
+          replyExcludes: ["Perfect. I captured this"]
         }
       ]
     },
@@ -172,6 +190,12 @@ async function run() {
           message: "hello@example.com",
           currentQuestion: "done",
           replyIncludes: ["Website chat assistant", "workflow:"]
+        },
+        {
+          message: "How do you handle privacy and customer data?",
+          currentQuestion: "done",
+          replyIncludes: ["Security", "what data is collected", "retention"],
+          replyExcludes: ["Perfect. I captured this"]
         }
       ]
     }

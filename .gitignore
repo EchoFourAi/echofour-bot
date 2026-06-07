@@ -1,6 +1,7 @@
 .env
 .env.*
 !.env.example
+lead-config.php
 .private/
 backups/
 New Text Document.txt
