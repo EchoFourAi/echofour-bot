@@ -1,0 +1,21 @@
+Options -Indexes
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set Cross-Origin-Resource-Policy "same-origin"
+  Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
+  Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; connect-src 'self'; font-src 'self'; form-action 'self' mailto:; frame-ancestors 'none'; img-src 'self' data:; object-src 'none'; script-src 'self'; style-src 'self'"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule (^|/)(\.env|\.private|\.git|backups|node_modules|tests|work|outputs)(/|$) - [F,L]
+</IfModule>
+
+<FilesMatch "(^\.|^lead-config\.php$|^package(-lock)?\.json$|^server\.(err|out)\.log$|^servertxt\.txt$|^New Text Document\.txt$)">
+  Require all denied
+</FilesMatch>

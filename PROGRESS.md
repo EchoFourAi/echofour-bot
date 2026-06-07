@@ -32,9 +32,16 @@ Last saved: 2026-06-07
 - Post-completion chat can now answer follow-up questions about estimates, timelines, tools/integrations, reminders, confirmations, texts, notifications, client requirements, privacy/security, fallback handling, and post-launch support.
 - A new full conversation matrix test was added and wired into `npm test`.
 - Project email is `hello@echofourai.com`.
+- The website now visibly links `hello@echofourai.com` in the contact section and footer, in addition to existing mailto CTAs.
 - `.env.example` is configured for Zoho SMTP with `hello@echofourai.com` as the sender/user placeholder; real SMTP credentials must stay in `.env` or deployment secrets.
 - IONOS production lead email path is prepared with `lead.php`, `lead-config.example.php`, and a production contact-form endpoint switch to `/lead.php`.
-- Current active work: prepare deployment/integration setup while continuing to add targeted chat QA as new buyer questions come up.
+- The IONOS update package is saved at `outputs/echofourai-ionos-website-update.zip`, with checklist `outputs/IONOS-Zoho-Deploy-Checklist.txt`.
+- The GitHub repo is pushed through commit `3c4321e` (`Connect EchoFour contact email`), but the live `echofourai.com` page still appeared to be serving the older version after the push. IONOS likely still needs manual Webspace/FTP upload or Deploy Now confirmation.
+- Local Git HTTPS is fixed: MinGit uses `http.sslBackend=schannel` and `http.schannelCheckRevoke=false`; a normal `ls-remote` to GitHub succeeded without `GIT_SSL_NO_VERIFY`.
+- Security/data protection hardening pass completed for IONOS/PHP hosting: `lead.php` now sets no-store/security headers, validates config, rejects placeholder secrets, enforces body-size limits, same-origin allowlisting, rate limiting, timing checks, honeypot drops, validated email fields, and TLS peer verification for SMTP.
+- `.htaccess` now disables directory indexes, adds static/PHP security headers, and denies access to private config, dotfiles, logs, package files, development folders, tests, dependencies, and accidental repo internals.
+- Privacy copy now warns against submitting highly sensitive data, names IONOS/Zoho service-provider use, and documents data minimization.
+- Current active work: finish live IONOS deployment/upload, add private Zoho app password config, and submit a live test lead.
 
 ## Key Files
 
@@ -58,6 +65,10 @@ Last saved: 2026-06-07
 - `tests/chat-followup.test.js` - multi-turn chat coverage
 - `tests/french-language.test.js` - French chat coverage
 - `tests/conversation-matrix.test.js` - full multi-turn automation conversation matrix, including post-completion questions
+- `lead.php` - IONOS/PHP lead email endpoint for Zoho SMTP
+- `lead-config.example.php` - template for the private production `lead-config.php`
+- `.htaccess` - IONOS/Apache webspace hardening for headers, directory listing, and sensitive file blocking
+- `tests/php-security-static.test.js` - static guardrail test for the PHP/IONOS security layer
 
 ## Verified Before Saving
 
@@ -69,6 +80,13 @@ Last saved: 2026-06-07
 - Restarted the localhost server and verified the live chat route is using the latest continuation logic.
 - Node syntax and full `npm.cmd test` pass after adding the IONOS/PHP lead endpoint.
 - PHP is not installed in the local Windows shell, so `php -l lead.php` could not be run locally; lint/test this on IONOS or any PHP-enabled shell after upload.
+- `hello@echofourai.com` mailto links were added to the contact section and footer.
+- Git commit `3c4321e` was pushed to `origin/main`.
+- GitHub HTTPS access was verified after fixing the local certificate failure with Schannel plus disabled revocation checking.
+- Full `npm.cmd test` passes after the IONOS/PHP security hardening, including `tests/php-security-static.test.js`.
+- `npm.cmd audit --audit-level=moderate` passes with 0 vulnerabilities when run with `NODE_OPTIONS=--use-system-ca` on this machine.
+- `SECURITY.md` updated with the June 7 security/data protection pass.
+- IONOS upload package and deployment checklist were refreshed after the security hardening.
 - Industry simulation examples open from the simulation report.
 - Plumbing and HVAC demos were verified in the in-app browser with no console errors.
 - Urgent and non-urgent closing messages were verified in the browser.
@@ -85,7 +103,9 @@ Last saved: 2026-06-07
 - Continue security hardening with deployment secrets, HTTPS/proxy settings, persistent database, and admin access controls.
 - Prepare deployment plan for a soft launch.
 - Create the real `.env` or deployment secrets with Zoho SMTP credentials for `hello@echofourai.com`.
-- For IONOS static/PHP hosting, create `lead-config.php` from `lead-config.example.php` with the real Zoho app password, upload `lead.php`, `lead-config.php`, and the updated `assets/site.js`, then submit a live test lead.
+- For IONOS static/PHP hosting, create `lead-config.php` from `lead-config.example.php` with the real Zoho app password, upload `.htaccess`, `lead.php`, `lead-config.php`, and the updated website files, then submit a live test lead.
+- Upload/deploy the latest website files to IONOS because the live domain did not immediately reflect pushed GitHub changes.
+- After deployment, verify `hello@echofourai.com` is visible on `https://echofourai.com`, security headers are present, sensitive files are blocked, and the contact form sends to Zoho.
 - Finish broad chat QA before launch by adding new matrix scenarios as real sales/demo questions appear.
 - Add more post-completion answers for likely lead questions: booking ownership, payment/deposit flows, analytics/reporting, and escalation ownership.
 - Keep testing after each batch: `node --check server.js`, `npm.cmd test`, then a live browser conversation on `http://localhost:3000/`.

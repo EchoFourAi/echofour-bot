@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node --env-file-if-exists=.env server.js",
-    "test": "node tests/chat-followup.test.js && node tests/conversation-matrix.test.js && node tests/french-language.test.js && node tests/industry-chat.test.js && node tests/launch-phrases.test.js && node tests/security.test.js",
+    "test": "node tests/chat-followup.test.js && node tests/conversation-matrix.test.js && node tests/french-language.test.js && node tests/industry-chat.test.js && node tests/launch-phrases.test.js && node tests/security.test.js && node tests/php-security-static.test.js",
     "test:chat": "node tests/chat-followup.test.js && node tests/conversation-matrix.test.js && node tests/french-language.test.js && node tests/industry-chat.test.js && node tests/launch-phrases.test.js",
-    "test:security": "node tests/security.test.js",
+    "test:security": "node tests/security.test.js && node tests/php-security-static.test.js",
     "audit": "npm audit --audit-level=moderate"
   },
   "keywords": [],

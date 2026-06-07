@@ -7,6 +7,7 @@ return [
   'from_email' => 'hello@echofourai.com',
   'from_name' => 'EchoFour AI',
   'to_email' => 'hello@echofourai.com',
+  'rate_limit_note' => 'lead.php allows 5 submissions per IP per 60 seconds and rejects oversized, too-fast, and stale form posts.',
   'allowed_origins' => [
     'https://echofourai.com',
     'https://www.echofourai.com'
